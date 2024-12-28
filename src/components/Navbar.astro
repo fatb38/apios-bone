@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import apiosLogo from '../assets/apios-logo.svg'
+
+const navItems = [
+  { label: 'Context', href: '#context' },
+  { label: 'Technology', href: '#technology' },
+  { label: 'News', href: '#news' },
+  { label: 'Communication', href: '#communication' },
+  { label: 'Team', href: '#team' },
+  { label: 'Contact', href: '#contact' }
+]
+---
+
+<nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between h-16">
+      <div class="flex-shrink-0 flex items-center">
+        <Image class="md:hidden" src={apiosLogo} alt="apios-logo" width="70" />
+        <Image class="hidden md:block" src={apiosLogo} alt="apios-logo" width="85" />
+      </div>
+      <!-- Mobile menu button -->
+      <button
+        id="menuButton"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <!-- Desktop menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class="font-roboto text-gray-600 hover:text-primary transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+  <!-- Mobile menu panel -->
+  <div id="mobileMenu" class="hidden md:hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class="block px-3 py-2 rounded-md text-base font-roboto text-gray-600 hover:text-primary hover:bg-gray-50"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuButton = document.getElementById('menuButton')
+  const mobileMenu = document.getElementById('mobileMenu')
+
+  menuButton?.addEventListener('click', () => {
+    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true'
+    menuButton.setAttribute('aria-expanded', (!isExpanded).toString())
+    mobileMenu?.classList.toggle('hidden')
+  })
+</script>
