@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from 'astro:assets'
 import apiosLogo from '../assets/apios-logo.svg'
 
 const navItems = [
@@ -16,8 +16,10 @@ const navItems = [
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex justify-between h-16">
       <div class="flex-shrink-0 flex items-center">
-        <Image class="md:hidden" src={apiosLogo} alt="apios-logo" width="70" />
-        <Image class="hidden md:block" src={apiosLogo} alt="apios-logo" width="85" />
+        <a href="/">
+          <Image class="md:hidden" src={apiosLogo} alt="apios-logo" width="70" />
+          <Image class="hidden md:block" src={apiosLogo} alt="apios-logo" width="85" loading="eager" decoding="sync" />
+        </a>
       </div>
       <!-- Mobile menu button -->
       <button
@@ -35,7 +37,7 @@ const navItems = [
         {navItems.map(item => (
           <a
             href={item.href}
-            class="font-roboto text-gray-600 hover:text-primary transition-colors"
+            class="font-roboto hover:text-primary transition-colors"
           >
             {item.label}
           </a>
@@ -49,7 +51,7 @@ const navItems = [
       {navItems.map(item => (
         <a
           href={item.href}
-          class="block px-3 py-2 rounded-md text-base font-roboto text-gray-600 hover:text-primary hover:bg-gray-50"
+          class="block px-3 py-2 rounded-md text-base font-roboto focus:bg-primary focus:text-white hover:text-white hover:bg-primary mobile-menu-item"
         >
           {item.label}
         </a>
@@ -61,10 +63,17 @@ const navItems = [
 <script>
   const menuButton = document.getElementById('menuButton')
   const mobileMenu = document.getElementById('mobileMenu')
+  const mobileMenuItems = mobileMenu?.querySelectorAll('.mobile-menu-item')
 
   menuButton?.addEventListener('click', () => {
     const isExpanded = menuButton.getAttribute('aria-expanded') === 'true'
     menuButton.setAttribute('aria-expanded', (!isExpanded).toString())
     mobileMenu?.classList.toggle('hidden')
+  })
+
+  mobileMenuItems?.forEach(menuItem => {
+    menuItem.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden')
+    })
   })
 </script>

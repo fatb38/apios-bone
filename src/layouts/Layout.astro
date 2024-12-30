@@ -3,21 +3,30 @@ interface Props {
   title: string;
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Innovative bone repair technology" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body class="font-open-sans text-gray-800">
-    <slot />
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Innovative bone repair technology" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+</head>
+<body class="font-open-sans text-gray-800">
+<slot />
+</body>
 </html>
+
+<style is:global>
+  *:focus-visible {
+    outline-color: theme('colors.primary');
+  }
+</style>
