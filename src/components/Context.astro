@@ -1,31 +1,43 @@
 ---
+import { Image } from 'astro:assets'
+import boneRadio from '../assets/bone-radio.png'
 ---
-<section id="context" class="py-16 sm:py-20 bg-white relative overflow-hidden">
-  <div class="absolute -left-24 -bottom-24 w-48 sm:w-96 h-48 sm:h-96 bg-primary/10 rounded-full blur-3xl"></div>
-  <div class="max-w-7xl mx-auto px-4 relative">
-    <h2 class="font-roboto font-bold text-2xl sm:text-4xl text-center mb-8 sm:mb-12">Understanding the Challenge</h2>
-    <div class="grid sm:grid-cols-2 gap-8 sm:gap-12 items-center">
-      <div class="bg-gradient-to-br from-primary to-primary/90 text-white rounded-2xl p-6 sm:p-8 shadow-xl">
-        <p class="text-base sm:text-lg mb-6">
-          Traditional bone repair methods often involve lengthy recovery periods and complicated procedures. Our mission is to revolutionize this process.
-        </p>
-        <ul class="space-y-4">
-          <li class="flex items-start text-sm sm:text-base">
-            <span class="text-accent font-bold mr-2">✓</span>
-            Reduced recovery time
-          </li>
-          <li class="flex items-start text-sm sm:text-base">
-            <span class="text-accent font-bold mr-2">✓</span>
-            Minimally invasive procedures
-          </li>
-          <li class="flex items-start text-sm sm:text-base">
-            <span class="text-accent font-bold mr-2">✓</span>
-            Enhanced healing process
-          </li>
-        </ul>
+<section id="context" class="py-12 sm:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <h2 class="font-roboto font-bold text-2xl sm:text-4xl mb-6">The Challenge in Bone Repair</h2>
+        <div class="bg-lightGray rounded-xl p-6 sm:p-8">
+          <p class="leading-relaxed mb-4">
+            Bone fractures are very common traumas. Today, 10% of bone defects don't repair, and it can reach 45% for
+            risk patients (diabetes, osteoporosis, elderly, smokers).
+          </p>
+          <p class="leading-relaxed">
+            In the case of severe trauma, the standard solution is autograft but the amount of available bone is
+            limited, and the surgical procedure is painful for the patient.
+          </p>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div class="bg-primary/10 rounded-lg p-4 text-center">
+            <span class="text-3xl font-bold text-primary">10%</span>
+            <p class="text-sm mt-2">Defects don't repair</p>
+          </div>
+          <div class="bg-primary/10 rounded-lg p-4 text-center">
+            <span class="text-3xl font-bold text-primary">45%</span>
+            <p class="text-sm mt-2">Risk patients</p>
+          </div>
+        </div>
       </div>
-      <div class="bg-lightGray rounded-2xl p-6 sm:p-8 shadow-lg border-2 border-primary/20">
-        [Placeholder for medical illustration]
+      <div class="order-2">
+        <div class="relative">
+          <Image
+            src={boneRadio}
+            alt="Bone fracture illustration"
+            class="relative rounded-2xl shadow-xl w-full object-cover aspect-4/3"
+            loading="eager"
+            decoding="sync"
+          />
+        </div>
       </div>
     </div>
   </div>
