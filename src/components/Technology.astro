@@ -1,5 +1,6 @@
 ---
-import FeatureCard from './FeatureCard.astro';
+import TechnologyCard from './TechnologyCard.astro'
+import SectionLayout from '../layouts/SectionLayout.astro'
 
 const features = [
   {
@@ -22,25 +23,27 @@ const features = [
     description: 'Simplified surgical procedure',
     icon: '✨'
   }
-];
+]
 ---
-<section id="technology" class="py-12 sm:py-20 bg-primary/5">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="lg:grid lg:grid-cols-2 gap-12 items-start">
-      <div>
-        <h2 class="font-roboto font-bold text-2xl sm:text-4xl mb-6">Our Innovative Solution</h2>
-        <div class="prose prose-lg">
-          <p class="leading-relaxed mb-6">
-            APIOS develops 3D bioactive implants to stimulate bone self-repair. The implant is a scaffold made by 3D printing, which allows control size, shape, and porosity. It can be custom-made for the patient.
-          </p>
-          <p class="leading-relaxed">
-            Internal and external surfaces are coated with a biomimetic film containing an osteo-inductive protein (BMP-2), which activates bone repair. The 3D bioactive implant is ready-to-use for the surgeon, which simplify the surgical procedure.
-          </p>
-        </div>
-      </div>
-      <div class="mt-12 lg:mt-0 grid sm:grid-cols-2 gap-6">
-        {features.map(feature => <FeatureCard {...feature} />)}
+<SectionLayout backgroundColor="bg-primary/5" id="technology">
+  <div class="lg:grid lg:grid-cols-2 gap-12 items-start">
+    <div>
+      <h2 class="font-roboto font-bold text-2xl sm:text-4xl mb-6">Our Innovative Solution</h2>
+      <div class="prose prose-lg">
+        <p class="leading-relaxed mb-6">
+          APIOS develops 3D bioactive implants to stimulate bone self-repair. The implant is a scaffold made by 3D
+          printing, which allows control size, shape, and porosity. It can be custom-made for the patient.
+        </p>
+        <p class="leading-relaxed">
+          Internal and external surfaces are coated with a biomimetic film containing an osteo-inductive protein
+          (BMP-2), which activates bone repair. The 3D bioactive implant is ready-to-use for the surgeon, which simplify
+          the surgical procedure.
+        </p>
       </div>
     </div>
+    <div class="mt-12 lg:mt-0 grid sm:grid-cols-2 gap-6">
+      {features.map(feature =>
+        <TechnologyCard {...feature} />)}
+    </div>
   </div>
-</section>
+</SectionLayout>
