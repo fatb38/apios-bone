@@ -3,6 +3,7 @@ import ApplicationCard from './ApplicationCard.astro'
 import dentalImage from '../../assets/dental-application.jpeg'
 import orthopedicImage from '../../assets/orthopedic-application.jpeg'
 import spinalImage from '../../assets/spinal-application.png'
+import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
 
 const applications = [
   {
@@ -25,16 +26,7 @@ const applications = [
 
 <section class="py-16 sm:py-20">
   <div class="max-w-7xl mx-auto px-4">
-    <h2
-      class="font-roboto font-bold text-2xl sm:text-4xl text-center mb-3 sm:mb-4"
-    >
-      Apios Applications
-    </h2>
-    <p
-      class="text-center text-gray-600 max-w-2xl mx-auto mb-8 sm:mb-12 text-sm sm:text-base"
-    >
-      Discover how our technology is transforming various medical procedures
-    </p>
+    <SectionTitleLayout title="Apios Applications" subtitle="Discover how our technology is transforming various medical procedures" />
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {applications.map((application) => <ApplicationCard {...application} />)}
     </div>
