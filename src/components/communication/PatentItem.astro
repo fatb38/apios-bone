@@ -1,11 +1,12 @@
 ---
 interface Props {
-  title: string;
-  number: string;
+  title: string
+  number: string
 }
 
-const { title, number } = Astro.props;
+const { title, number } = Astro.props
 ---
+
 <li class="mb-6 list-disc">
   <p class="mb-2">{title}</p>
   <p class="text-primary text-sm">{number}</p>

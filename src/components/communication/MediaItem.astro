@@ -1,12 +1,13 @@
 ---
 interface Props {
-  type: string;
-  linkTitle: string;
-  linkUrl: string;
+  type: string
+  linkTitle: string
+  linkUrl: string
 }
 
 const { type, linkUrl, linkTitle } = Astro.props
 ---
+
 <li class="mb-4 list-disc">
   {type}
   <a

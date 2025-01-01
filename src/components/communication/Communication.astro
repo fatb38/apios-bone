@@ -4,11 +4,18 @@ import PatentItem from './PatentItem.astro'
 import MediaItem from './MediaItem.astro'
 import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
 ---
+
 <section id="communication" class="py-16 sm:py-20 relative overflow-hidden">
   <!-- Decorative background elements -->
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white" />
-  <div class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-  <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white"></div>
+  <div
+    class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"
+  >
+  </div>
 
   <div class="max-w-7xl mx-auto px-4 relative">
     <SectionTitleLayout
@@ -20,10 +27,8 @@ import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
       <!-- Publications -->
       <div class="relative">
         <div class="sticky top-24">
-          <h3 class="font-roboto text-xl mb-4">
-            Publications
-          </h3>
-          <div class="h-px bg-gray-300 mb-6" />
+          <h3 class="font-roboto text-xl mb-4">Publications</h3>
+          <div class="h-px bg-gray-300 mb-6"></div>
           <ul class="space-y-8">
             <PublicationItem
               title="3D-Printed Osteoinductive Polymeric Scaffolds with Optimized Architecture to Repair a Sheep Metatarsal Critical-Size Bone Defect."
@@ -48,10 +53,8 @@ import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
       <!-- Patents -->
       <div class="relative">
         <div class="sticky top-24">
-          <h3 class="font-roboto text-xl mb-4">
-            Patents
-          </h3>
-          <div class="h-px bg-gray-300 mb-6" />
+          <h3 class="font-roboto text-xl mb-4">Patents</h3>
+          <div class="h-px bg-gray-300 mb-6"></div>
           <ul class="space-y-8">
             <PatentItem
               title="Implantable medical device for bone repair."
@@ -68,14 +71,24 @@ import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
       <!-- Communications -->
       <div class="relative">
         <div class="sticky top-24">
-          <h3 class="font-roboto text-xl mb-4">
-            Media Coverage
-          </h3>
+          <h3 class="font-roboto text-xl mb-4">Media Coverage</h3>
           <div class="h-px bg-gray-300 mb-6"></div>
           <ul class="space-y-6">
-            <MediaItem type="Press release" linkTitle="Le Monde" linkUrl="toto.fr" />
-            <MediaItem type="Press release" linkTitle="blog CNRS" linkUrl="toto.fr" />
-            <MediaItem type="Podcast" linkTitle="La chronique Santé de Thierry Lhermitte" linkUrl="toto.fr" />
+            <MediaItem
+              type="Press release"
+              linkTitle="Le Monde"
+              linkUrl="toto.fr"
+            />
+            <MediaItem
+              type="Press release"
+              linkTitle="blog CNRS"
+              linkUrl="toto.fr"
+            />
+            <MediaItem
+              type="Podcast"
+              linkTitle="La chronique Santé de Thierry Lhermitte"
+              linkUrl="toto.fr"
+            />
           </ul>
         </div>
       </div>

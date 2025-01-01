@@ -25,11 +25,18 @@ const features = [
   }
 ]
 ---
+
 <section id="technology" class="py-16 sm:py-20 relative overflow-hidden">
   <!-- Decorative background elements -->
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white" />
-  <div class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-  <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white"></div>
+  <div
+    class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"
+  >
+  </div>
 
   <div class="max-w-7xl mx-auto px-4 relative">
     <SectionTitleLayout
@@ -40,18 +47,19 @@ const features = [
     <div class="lg:grid lg:grid-cols-2 gap-12 items-start">
       <div class="prose prose-lg">
         <p class="leading-relaxed mb-6">
-          APIOS develops 3D bioactive implants to stimulate bone self-repair. The implant is a scaffold made by 3D
-          printing, which allows control size, shape, and porosity. It can be custom-made for the patient.
+          APIOS develops 3D bioactive implants to stimulate bone self-repair.
+          The implant is a scaffold made by 3D printing, which allows control
+          size, shape, and porosity. It can be custom-made for the patient.
         </p>
         <p class="leading-relaxed">
-          Internal and external surfaces are coated with a biomimetic film containing an osteo-inductive protein
-          (BMP-2), which activates bone repair. The 3D bioactive implant is ready-to-use for the surgeon, which simplify
-          the surgical procedure.
+          Internal and external surfaces are coated with a biomimetic film
+          containing an osteo-inductive protein (BMP-2), which activates bone
+          repair. The 3D bioactive implant is ready-to-use for the surgeon,
+          which simplify the surgical procedure.
         </p>
       </div>
       <div class="mt-12 lg:mt-0 grid sm:grid-cols-2 gap-6">
-        {features.map(feature =>
-          <TechnologyCard {...feature} />)}
+        {features.map((feature) => <TechnologyCard {...feature} />)}
       </div>
     </div>
   </div>

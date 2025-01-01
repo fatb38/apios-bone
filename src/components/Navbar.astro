@@ -17,8 +17,20 @@ const navItems = [
     <div class="flex justify-between h-16">
       <div class="flex-shrink-0 flex items-center">
         <a href="/">
-          <Image class="md:hidden" src={apiosLogo} alt="apios-logo" width="70" />
-          <Image class="hidden md:block" src={apiosLogo} alt="apios-logo" width="85" loading="eager" decoding="sync" />
+          <Image
+            class="md:hidden"
+            src={apiosLogo}
+            alt="apios-logo"
+            width="70"
+          />
+          <Image
+            class="hidden md:block"
+            src={apiosLogo}
+            alt="apios-logo"
+            width="85"
+            loading="eager"
+            decoding="sync"
+          />
         </a>
       </div>
       <!-- Mobile menu button -->
@@ -28,34 +40,47 @@ const navItems = [
         aria-expanded="false"
       >
         <span class="sr-only">Open main menu</span>
-        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <svg
+          class="block h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
       <!-- Desktop menu -->
       <div class="hidden md:flex items-center space-x-8">
-        {navItems.map(item => (
-          <a
-            href={item.href}
-            class="font-roboto hover:text-primary transition-colors"
-          >
-            {item.label}
-          </a>
-        ))}
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="font-roboto hover:text-primary transition-colors"
+            >
+              {item.label}
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
   <!-- Mobile menu panel -->
   <div id="mobileMenu" class="hidden md:hidden">
     <div class="px-2 pt-2 pb-3 space-y-1">
-      {navItems.map(item => (
-        <a
-          href={item.href}
-          class="block px-3 py-2 rounded-md text-base font-roboto focus:bg-primary focus:text-white hover:text-white hover:bg-primary mobile-menu-item"
-        >
-          {item.label}
-        </a>
-      ))}
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="block px-3 py-2 rounded-md text-base font-roboto focus:bg-primary focus:text-white hover:text-white hover:bg-primary mobile-menu-item"
+          >
+            {item.label}
+          </a>
+        ))
+      }
     </div>
   </div>
 </nav>
@@ -71,7 +96,7 @@ const navItems = [
     mobileMenu?.classList.toggle('hidden')
   })
 
-  mobileMenuItems?.forEach(menuItem => {
+  mobileMenuItems?.forEach((menuItem) => {
     menuItem.addEventListener('click', () => {
       mobileMenu?.classList.toggle('hidden')
     })
