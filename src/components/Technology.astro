@@ -1,6 +1,6 @@
 ---
 import TechnologyCard from './TechnologyCard.astro'
-import SectionLayout from '../layouts/SectionLayout.astro'
+import SectionTitleLayout from '../layouts/SectionTitleLayout.astro'
 
 const features = [
   {
@@ -25,10 +25,19 @@ const features = [
   }
 ]
 ---
-<SectionLayout backgroundColor="bg-primary/5" id="technology">
-  <div class="lg:grid lg:grid-cols-2 gap-12 items-start">
-    <div>
-      <h2 class="font-roboto font-bold text-2xl sm:text-4xl mb-6">Our Innovative Solution</h2>
+<section id="technology" class="py-16 sm:py-20 relative overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white" />
+  <div class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+
+  <div class="max-w-7xl mx-auto px-4 relative">
+    <SectionTitleLayout
+      title="Our Innovative Solution"
+      subtitle="Advanced 3D bioactive implants that revolutionize bone self-repair"
+    />
+
+    <div class="lg:grid lg:grid-cols-2 gap-12 items-start">
       <div class="prose prose-lg">
         <p class="leading-relaxed mb-6">
           APIOS develops 3D bioactive implants to stimulate bone self-repair. The implant is a scaffold made by 3D
@@ -40,10 +49,10 @@ const features = [
           the surgical procedure.
         </p>
       </div>
-    </div>
-    <div class="mt-12 lg:mt-0 grid sm:grid-cols-2 gap-6">
-      {features.map(feature =>
-        <TechnologyCard {...feature} />)}
+      <div class="mt-12 lg:mt-0 grid sm:grid-cols-2 gap-6">
+        {features.map(feature =>
+          <TechnologyCard {...feature} />)}
+      </div>
     </div>
   </div>
-</SectionLayout>
+</section>

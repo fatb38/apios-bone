@@ -1,43 +1,48 @@
 ---
 import { Image } from 'astro:assets'
 import boneRadio from '../assets/bone-radio.png'
-import SectionLayout from '../layouts/SectionLayout.astro'
+import SectionTitleLayout from '../layouts/SectionTitleLayout.astro'
 ---
-<SectionLayout backgroundColor="bg-white" id="context">
-  <div class="grid lg:grid-cols-2 gap-12 items-center">
-    <div class="order-2 lg:order-1">
-      <h2 class="font-roboto font-bold text-2xl sm:text-4xl mb-6">The Challenge in Bone Repair</h2>
-      <div class="bg-lightGray rounded-xl p-6 sm:p-8">
-        <p class="leading-relaxed mb-4">
-          Bone fractures are very common traumas. Today, 10% of bone defects don't repair, and it can reach 45% for
-          risk patients (diabetes, osteoporosis, elderly, smokers).
-        </p>
-        <p class="leading-relaxed">
-          In the case of severe trauma, the standard solution is autograft but the amount of available bone is
-          limited, and the surgical procedure is painful for the patient.
-        </p>
-      </div>
-      <div class="mt-6 grid grid-cols-2 gap-4">
-        <div class="bg-primary/10 rounded-lg p-4 text-center">
-          <span class="text-3xl font-bold text-primary">10%</span>
-          <p class="text-sm mt-2">Defects don't repair</p>
+<section id="context" class="py-16 sm:py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <SectionTitleLayout
+      title="The Challenge in Bone Repair"
+      subtitle="Understanding the critical issues in current bone repair methods"
+    />
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="bg-lightGray rounded-xl p-6 sm:p-8">
+          <p class="leading-relaxed mb-4">
+            Bone fractures are very common traumas. Today, 10% of bone defects don't repair, and it can reach 45% for
+            risk patients (diabetes, osteoporosis, elderly, smokers).
+          </p>
+          <p class="leading-relaxed">
+            In the case of severe trauma, the standard solution is autograft but the amount of available bone is
+            limited, and the surgical procedure is painful for the patient.
+          </p>
         </div>
-        <div class="bg-primary/10 rounded-lg p-4 text-center">
-          <span class="text-3xl font-bold text-primary">45%</span>
-          <p class="text-sm mt-2">Risk patients</p>
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div class="bg-primary/10 rounded-lg p-4 text-center">
+            <span class="text-3xl font-bold text-primary">10%</span>
+            <p class="text-sm mt-2">Defects don't repair</p>
+          </div>
+          <div class="bg-primary/10 rounded-lg p-4 text-center">
+            <span class="text-3xl font-bold text-primary">45%</span>
+            <p class="text-sm mt-2">Risk patients</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="order-2">
-      <div class="relative">
-        <Image
-          src={boneRadio}
-          alt="Bone fracture illustration"
-          class="relative rounded-2xl shadow-xl w-full object-cover aspect-4/3"
-          loading="eager"
-          decoding="sync"
-        />
+      <div class="order-2">
+        <div class="relative">
+          <Image
+            src={boneRadio}
+            alt="Bone fracture illustration"
+            class="relative rounded-2xl shadow-xl w-full object-cover aspect-4/3"
+            loading="eager"
+            decoding="sync"
+          />
+        </div>
       </div>
     </div>
   </div>
-</SectionLayout>
+</section>
