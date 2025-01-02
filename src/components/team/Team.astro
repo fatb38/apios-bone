@@ -1,0 +1,67 @@
+---
+import TeamMember from './TeamMember.astro'
+import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
+import paulMachillotPhoto from '../../assets/members-photo/paul-machillot.png'
+import catherinePicartPhoto from '../../assets/members-photo/catherine-picart.jpg'
+import georgesBettegaPhoto from '../../assets/members-photo/georges-bettega.png'
+import abhayPanditPhoto from '../../assets/members-photo/abhay-pandit.jpg'
+import youssefHaikelPhoto from '../../assets/members-photo/youssef-haikel.jpg'
+import jeanPierreBrunPhoto from '../../assets/members-photo/jp-brun.jpg'
+
+const teamMembers = [
+  {
+    name: 'Catherine PICART',
+    position: 'Chief Executive Officer',
+    email: 'catherine.picart@apios-bone.com',
+    linkedIn: 'https://www.linkedin.com/in/catherine-picart-40801764/',
+    photo: catherinePicartPhoto,
+    isCofounder: true,
+    extraJob: 'Full Professor at Grenoble INP'
+  },
+  {
+    name: 'Paul MACHILLOT',
+    position: 'Chief Technology Officer',
+    email: 'paul.machillot@apios-bone.com',
+    linkedIn: 'https://www.linkedin.com/in/paul-machillot-a39299292',
+    photo: paulMachillotPhoto,
+    isCofounder: true,
+    extraJob: 'CNRS Engineer in Biotechnologies'
+  },
+  {
+    name: 'Gorges BETTEGA',
+    position: 'Chief Clinical Officer',
+    email: 'georges.bettega@apios-bone.com',
+    photo: georgesBettegaPhoto,
+    extraJob: 'Head of maxillo-facial department at Annecy Hospital'
+  },
+  {
+    name: 'Prof. Abhay PANDIT',
+    position:
+      'Founding Director of a Research Ireland Centre for Research in Medical Devices (CÚRAM)',
+    photo: abhayPanditPhoto
+  },
+  {
+    name: 'Prof. Youssef HAIKEL',
+    position: 'Honorary Dean at Faculty of Dental Surgery of Strasbourg',
+    photo: youssefHaikelPhoto
+  },
+  {
+    name: 'Dr. Jean-Pierre BRUN',
+    position: 'Dental surgeon',
+    photo: jeanPierreBrunPhoto,
+    extraJob: 'Expert in Dental Implantology'
+  }
+]
+---
+
+<section id="team" class="py-16 sm:py-20">
+  <div class="max-w-7xl mx-auto px-4 relative">
+    <SectionTitleLayout
+      title="Our Team"
+      subtitle="Meet our dedicated team of experts working to revolutionize bone repair technology"
+    />
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {teamMembers.map((member) => <TeamMember {...member} />)}
+    </div>
+  </div>
+</section>
