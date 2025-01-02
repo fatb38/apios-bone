@@ -26,7 +26,10 @@ const applications = [
 
 <section class="py-16 sm:py-20">
   <div class="max-w-7xl mx-auto px-4">
-    <SectionTitleLayout title="Apios Applications" subtitle="Discover how our technology is transforming various medical procedures" />
+    <SectionTitleLayout
+      title="Apios Applications"
+      subtitle="Discover how our technology is transforming various medical procedures"
+    />
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {applications.map((application) => <ApplicationCard {...application} />)}
     </div>
