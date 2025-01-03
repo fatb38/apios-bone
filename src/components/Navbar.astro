@@ -17,22 +17,28 @@ const navItems = [
     <div class="flex justify-between h-16">
       <div class="flex-shrink-0 flex items-center">
         <a href="/">
-          <Image
-            class="md:hidden"
-            src={apiosLogo}
-            alt="apios-logo"
-            width="70"
-            loading="eager"
-            decoding="sync"
-          />
-          <Image
-            class="hidden md:block"
-            src={apiosLogo}
-            alt="apios-logo"
-            width="85"
-            loading="lazy"
-            decoding="sync"
-          />
+          <picture>
+            <!-- For mobile devices -->
+            <source
+              srcset={apiosLogo.src}
+              media="(max-width: 768px)"
+              width="70"
+            />
+            <!-- For desktop devices -->
+            <source
+              srcset={apiosLogo.src}
+              media="(min-width: 769px)"
+              width="85"
+            />
+            <!-- Default fallback image -->
+            <Image
+              src={apiosLogo}
+              alt="apios-logo"
+              loading="eager"
+              decoding="sync"
+              width="85"
+            />
+          </picture>
         </a>
       </div>
       <!-- Mobile menu button -->

@@ -1,16 +1,18 @@
 ---
+import { Image } from 'astro:assets'
 import TechnologyCard from './TechnologyCard.astro'
 import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
+import apiosImplantPhoto from '../../assets/apios-implant.jpg'
 
 const features = [
   {
-    title: 'Osteo conductor',
+    title: 'Osteo conductive',
     description: 'Scaffold structure promotes bone growth',
     icon: '🦴'
   },
   {
-    title: 'Osteo inductor',
-    description: 'BMP-2 protein coating activates repair',
+    title: 'Osteo inductive',
+    description: 'BMP-2 protein coating activates bone repair',
     icon: '🧬'
   },
   {
@@ -45,7 +47,7 @@ const features = [
     />
 
     <div class="lg:grid lg:grid-cols-2 gap-12 items-start">
-      <div class="prose prose-lg">
+      <div>
         <p class="leading-relaxed mb-6">
           APIOS develops 3D bioactive implants to stimulate bone self-repair.
           The implant is a scaffold made by 3D printing, which allows control
@@ -57,10 +59,17 @@ const features = [
           repair. The 3D bioactive implant is ready-to-use for the surgeon,
           which simplify the surgical procedure.
         </p>
+        <div class="mt-12 lg:mt-6 grid sm:grid-cols-2 gap-6">
+          {features.map((feature) => <TechnologyCard {...feature} />)}
+        </div>
       </div>
-      <div class="mt-12 lg:mt-0 grid sm:grid-cols-2 gap-6">
-        {features.map((feature) => <TechnologyCard {...feature} />)}
-      </div>
+      <Image
+        src={apiosImplantPhoto}
+        alt="apios-implant"
+        class="mt-12 lg:mt-0 relative rounded-2xl shadow-xl w-full object-cover aspect-4/3"
+        loading="lazy"
+        decoding="sync"
+      />
     </div>
   </div>
 </section>

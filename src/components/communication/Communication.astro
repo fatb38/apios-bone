@@ -3,6 +3,64 @@ import PublicationItem from './PublicationItem.astro'
 import PatentItem from './PatentItem.astro'
 import MediaItem from './MediaItem.astro'
 import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
+
+const publications = [
+  {
+    title:
+      '3D-Printed Osteoinductive Polymeric Scaffolds with Optimized Architecture to Repair a Sheep Metatarsal Critical-Size Bone Defect.',
+    doi: '10.1002/adhm.202301692'
+  },
+  {
+    title:
+      'Additive Manufacturing of Material Scaffolds for Bone Regeneration: Toward Application in the Clinics.',
+    doi: '10.1002/adfm.202006967'
+  },
+  {
+    title:
+      '3D-printed scaffold combined to 2D osteoinductive coatings to repair a critical-size mandibular bone defect.',
+    doi: '10.1016/j.mtbio.2021.100113'
+  },
+  {
+    title:
+      'Surface delivery of tunable doses of BMP-2 from an adaptable polymeric scaffold induces volumetric bone regeneration.',
+    doi: '10.1016/j.biomaterials.2016.06.001'
+  }
+]
+
+const patents = [
+  {
+    title: 'Implantable medical device for bone repair.',
+    number: 'WO2022063771A1',
+    linkUrl: 'https://patents.google.com/patent/WO2022063771A1'
+  },
+  {
+    title:
+      'Process for preparing a surface coated by crosslinked polyelectrolyte multilayer films as a biomimetic reservoir for proteins.',
+    number: 'WO2010081884A2',
+    linkUrl: 'https://patents.google.com/patent/WO2010081884A2'
+  }
+]
+
+const medias = [
+  {
+    type: 'Press release',
+    linkTitle: 'Le Monde',
+    linkUrl:
+      'https://www.lemonde.fr/sante/article/2024/09/06/quand-une-ia-imite-la-nature-pour-mieux-reparer-les-os_6305261_1651302.html'
+  },
+  {
+    type: 'Press release',
+    linkTitle: 'Blog CNRS',
+    linkUrl:
+      'https://lejournal.cnrs.fr/nos-blogs/focus-sciences/un-implant-bioactif-imprime-en-3d-revolutionne-la-reparation-osseuse'
+  },
+  {
+    type: 'Podcast',
+    linkTitle: 'La chronique Santé de Thierry Lhermitte',
+    linkUrl:
+      'https://www.radiofrance.fr/franceinter/podcasts/la-chronique-sante-de-thierry-lhermitte/la-chronique-sante-de-thierry-lhermitte-du-lundi-18-novembre-2024-8484350'
+  }
+]
 ---
 
 <section id="communication" class="py-16 sm:py-20 relative overflow-hidden">
@@ -30,22 +88,11 @@ import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
           <h3 class="font-roboto text-xl mb-4">Publications</h3>
           <div class="h-px bg-gray-300 mb-6"></div>
           <ul class="space-y-8">
-            <PublicationItem
-              title="3D-Printed Osteoinductive Polymeric Scaffolds with Optimized Architecture to Repair a Sheep Metatarsal Critical-Size Bone Defect."
-              doi="10.1002/a-hm.202301692"
-            />
-            <PublicationItem
-              title="Additive Manufacturing of Material Scaffolds for Bone Regeneration: Toward Application in the Clinics."
-              doi="10.1002/adfm.202006967"
-            />
-            <PublicationItem
-              title="3D-printed scaffold combined to 2D osteoinductive coatings to repair a critical-size mandibular bone defect."
-              doi="10.1016/j.mtbio.2021.100113"
-            />
-            <PublicationItem
-              title="Surface delivery of tunable doses of BMP-2 from an adaptable polymeric scaffold induces volumetric bone regeneration."
-              doi="10.1016/j.biomaterials.2016.06.001"
-            />
+            {
+              publications.map((publication) => (
+                <PublicationItem {...publication} />
+              ))
+            }
           </ul>
         </div>
       </div>
@@ -56,14 +103,7 @@ import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
           <h3 class="font-roboto text-xl mb-4">Patents</h3>
           <div class="h-px bg-gray-300 mb-6"></div>
           <ul class="space-y-8">
-            <PatentItem
-              title="Implantable medical device for bone repair."
-              number="WO2022063771A1"
-            />
-            <PatentItem
-              title="Process for preparing a surface coated by crosslinked polyelectrolyte multilayer films as a biomimetic reservoir for proteins."
-              number="WO2010081884A2"
-            />
+            {patents.map((patent) => <PatentItem {...patent} />)}
           </ul>
         </div>
       </div>
@@ -74,21 +114,7 @@ import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
           <h3 class="font-roboto text-xl mb-4">Media Coverage</h3>
           <div class="h-px bg-gray-300 mb-6"></div>
           <ul class="space-y-6">
-            <MediaItem
-              type="Press release"
-              linkTitle="Le Monde"
-              linkUrl="toto.fr"
-            />
-            <MediaItem
-              type="Press release"
-              linkTitle="blog CNRS"
-              linkUrl="toto.fr"
-            />
-            <MediaItem
-              type="Podcast"
-              linkTitle="La chronique Santé de Thierry Lhermitte"
-              linkUrl="toto.fr"
-            />
+            {medias.map((media) => <MediaItem {...media} />)}
           </ul>
         </div>
       </div>
