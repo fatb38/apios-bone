@@ -3,27 +3,31 @@ import { Image } from 'astro:assets'
 import TechnologyCard from './TechnologyCard.astro'
 import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
 import apiosImplantPhoto from '../../assets/apios-implant.jpg'
+import osteoInductiveIcon from '../../assets/icons/osteo-inductive-icon.svg'
+import osteoConductiveIcon from '../../assets/icons/osteo-conductive-icon.svg'
+import customMadeIcon from '../../assets/icons/custom-made-icon.svg'
+import readyToUseIcon from '../../assets/icons/ready-to-use-icon.svg'
 
 const features = [
   {
     title: 'Osteo conductive',
     description: 'Scaffold structure promotes bone growth',
-    icon: '🦴'
+    icon: osteoConductiveIcon
   },
   {
     title: 'Osteo inductive',
     description: 'BMP-2 protein coating activates bone repair',
-    icon: '🧬'
+    icon: osteoInductiveIcon
   },
   {
     title: 'Custom made',
     description: '3D printed to match patient needs',
-    icon: '🎯'
+    icon: customMadeIcon
   },
   {
     title: 'Ready to use',
     description: 'Simplified surgical procedure',
-    icon: '✨'
+    icon: readyToUseIcon
   }
 ]
 ---
@@ -38,8 +42,8 @@ const features = [
       subtitle="Advanced 3D bioactive implants that revolutionize bone self-repair"
     />
 
-    <div class="lg:grid lg:grid-cols-2 gap-12 items-start">
-      <div>
+    <div class="lg:grid lg:grid-cols-3 gap-12 items-start">
+      <div class="lg:col-span-2">
         <p class="leading-relaxed mb-6">
           APIOS develops 3D bioactive implants to stimulate bone self-repair.
           The implant is a scaffold made by 3D printing, which allows control
