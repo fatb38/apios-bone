@@ -13,12 +13,12 @@ import SectionTitleLayout from '../layouts/SectionTitleLayout.astro'
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1">
         <div class="bg-lightGray rounded-xl p-6 sm:p-8">
-          <p class="leading-relaxed mb-4 text-justify">
+          <p class="leading-relaxed mb-4">
             Bone fractures are very common traumas. Today, 10% of bone defects
             don't repair, and it can reach 45% for risk patients (diabetes,
             osteoporosis, elderly, smokers).
           </p>
-          <p class="leading-relaxed text-justify">
+          <p class="leading-relaxed">
             In the case of severe trauma, the standard solution is autograft but
             the amount of available bone is limited, and the surgical procedure
             is painful for the patient.
@@ -40,14 +40,14 @@ import SectionTitleLayout from '../layouts/SectionTitleLayout.astro'
           <Image
             src={boneRadio}
             alt="Bone fracture illustration"
-            class="md:hidden relative rounded-2xl shadow-xl w-full object-cover aspect-4/3"
+            class="md:hidden relative rounded-2xl shadow-lg w-full object-cover aspect-4/3"
             loading="lazy"
             decoding="sync"
           />
           <Image
             src={boneRadio}
             alt="Bone fracture illustration"
-            class="hidden md:block relative rounded-2xl shadow-xl w-full object-cover aspect-4/3"
+            class="hidden md:block relative rounded-2xl shadow-lg w-full object-cover aspect-4/3"
             loading="eager"
             decoding="sync"
           />

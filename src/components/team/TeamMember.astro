@@ -7,11 +7,11 @@ export interface Props {
   position: string
   email?: string
   extraJob?: string
-  isCofounder?: boolean
+  extraPosition?: string
   linkedIn?: string
 }
 
-const { name, position, email, linkedIn, photo, isCofounder, extraJob } =
+const { name, position, email, linkedIn, photo, extraPosition, extraJob } =
   Astro.props
 ---
 
@@ -28,9 +28,9 @@ const { name, position, email, linkedIn, photo, isCofounder, extraJob } =
     <h3 class="font-roboto font-semibold text-lg">{name}</h3>
     <p class="text-gray-600">{position}<br />{extraJob}</p>
     {
-      isCofounder && (
+      extraPosition && (
         <span class="inline-block text-sm text-primary font-medium">
-          Co-founder
+          {extraPosition}
         </span>
       )
     }
