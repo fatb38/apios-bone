@@ -11,9 +11,7 @@ interface Props {
 const { title, imageUrl, altText } = Astro.props
 ---
 
-<div
-  class="bg-white rounded-xl overflow-hidden shadow-lg transition-all"
->
+<div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all">
   <Image
     src={imageUrl}
     alt={altText}
