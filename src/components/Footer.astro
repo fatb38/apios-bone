@@ -1,0 +1,122 @@
+---
+import DeveloperCredits from './DeveloperCredits.astro'
+
+const currentYear = new Date().getFullYear()
+
+const links = {
+  company: [
+    { label: 'About', href: '/#context' },
+    { label: 'Team', href: '/#team' },
+    { label: 'Contact', href: '/#contact' }
+  ],
+  technology: [
+    { label: 'Solution', href: '/#technology' },
+    { label: 'Applications', href: '/#applications' },
+    { label: 'Research', href: '/#communication' }
+  ],
+  social: [
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/catherine-picart-40801764/',
+      icon: 'linkedin'
+    }
+  ]
+}
+
+const developer = {
+  name: 'Arnaud Groby',
+  github: 'https://github.com/fatb38',
+  linkedin: 'https://fr.linkedin.com/in/arnaud-groby-web-dev'
+}
+---
+
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Main footer content -->
+    <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <h3 class="font-roboto font-bold text-xl mb-4">APIOS</h3>
+        <p class="text-gray-400 text-sm">
+          Revolutionizing bone repair with innovative 3D bioactive implants.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-roboto font-semibold mb-4">Company</h4>
+        <ul class="space-y-2">
+          {
+            links.company.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-gray-400 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-roboto font-semibold mb-4">Technology</h4>
+        <ul class="space-y-2">
+          {
+            links.technology.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-gray-400 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div>
+        <h4 class="font-roboto font-semibold mb-4">Connect With Us</h4>
+        <div class="flex space-x-4">
+          {
+            links.social.map((link) => (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition-colors"
+                aria-label={link.label}
+              >
+                {link.icon === 'linkedin' && (
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                )}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-gray-800 py-6">
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0"
+      >
+        <div class="text-gray-400 text-sm flex flex-wrap items-center gap-4">
+          <span>© {currentYear} APIOS. All rights reserved.</span>
+          <a href="/legal-notices" class="hover:text-white transition-colors"
+            >Legal Notices</a
+          >
+        </div>
+        <DeveloperCredits {...developer} />
+      </div>
+    </div>
+  </div>
+</footer>
