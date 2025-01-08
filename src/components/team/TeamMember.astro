@@ -15,12 +15,12 @@ const { name, position, email, linkedIn, photo, extraPosition, extraJob } =
   Astro.props
 ---
 
-<div class="text-center group">
+<div class="flex flex-col justify-center px-4 py-6 border-2 border-primary/20 hover:border-primary/50 transition-all bg-white text-center group rounded-3xl">
   <div class="relative mb-4 mx-auto w-40 h-40">
     <Image
       src={photo}
       alt={name}
-      class="w-40 h-40 rounded-full object-cover border-2 border-primary/40 hover:border-primary/80 transition-colors"
+      class="w-40 h-40 rounded-full object-cover"
       loading="lazy"
     />
   </div>
