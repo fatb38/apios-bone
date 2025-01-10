@@ -1,0 +1,48 @@
+---
+import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
+import NewsCard from './NewsCard.astro'
+import { getCollection } from 'astro:content'
+
+const allNews = await getCollection('news')
+const sortedNews = allNews.sort(
+  (a: any, b: any) => b.data.date.getTime() - a.data.date.getTime()
+)
+const recentNews = sortedNews.slice(0, 3)
+const hasMoreNews = sortedNews.length > 3
+---
+
+<section
+  id="news"
+  class="py-16 sm:py-20 bg-gradient-to-br from-primary/10 to-primary/5"
+>
+  <div class="max-w-7xl mx-auto px-4">
+    <SectionTitleLayout title="News" subtitle="Latest news" />
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+      {
+        recentNews.map((news: any) => (
+          <NewsCard
+            title={news.data.title}
+            date={news.data.date}
+            image={news.data.image}
+            content={news.body}
+            link={news.data.link}
+          />
+        ))
+      }
+    </div>
+
+    {
+      hasMoreNews && (
+        <div class="text-center">
+          <a
+            href="/news"
+            class="inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-colors"
+          >
+            Show More News
+          </a>
+        </div>
+      )
+    }
+  </div>
+</section>
