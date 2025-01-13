@@ -1,6 +1,6 @@
 ---
 title: "TECH and Fest 2025"
-date: 2024-10-25
+date: 2024-12-24
 image: "/news/images/tech-fest.png"
 link: "https://www.tech-fest.fr/fr"
 ---
