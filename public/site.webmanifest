@@ -1,6 +1,7 @@
 {
-  "name": "APIOS",
+  "name": "APIOS - Advanced Bone Repair Technology",
   "short_name": "APIOS",
+  "description": "Revolutionary 3D bioactive implants for bone repair",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -17,5 +18,6 @@
   ],
   "theme_color": "#4db874",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/"
 }

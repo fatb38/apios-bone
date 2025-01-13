@@ -2,36 +2,77 @@
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 interface Props {
-  title: string
+  title?: string
 }
 
 const { title } = Astro.props
+const siteName = 'Apios Ɛ==3 - Innovative Bone Repair Technology'
+const canonicalURL = Astro.url.href
+const description =
+  'APIOS is transforming the future of bone healing with innovative solutions and technology. We develops revolutionary 3D bioactive implants for bone repair, combining advanced materials with smart healing systems for better patient outcomes.'
+const keywords =
+  'bone repair, bioactive implants, orthopedic technology, medical innovation, 3D printing, tissue engineering, biomaterials, regenerative medicine'
+const image = '/bone-radio.png'
+const siteUrl = 'https://apios-bone.com'
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
-    <meta name="description" content="Innovative bone repair technology" />
     <meta name="viewport" content="width=device-width" />
+
+    <title>{title} | {siteName}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="APIOS" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, siteUrl)} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, siteUrl)} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="APIOS" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!--TODO add an environnement variable to hide the site on dev.apios-bone.fr-->
     <meta name="robots" content="noindex, nofollow" />
     <meta name="googlebot" content="noindex, nofollow" />
+    <!--<meta name="googlebot" content="index, follow" />-->
+    <!--<meta name="robots" content="index, follow" />-->
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-    <meta name="apple-mobile-web-app-title" content="APIOS" />
-    <meta name="theme-color" content="#4db874">
+
+    <!-- Ensure mobile browsers use the proper viewport -->
+    <meta name="theme-color" content="#4db874" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <body class="font-open-sans text-gray-800">
     <Navbar />
