@@ -9,12 +9,28 @@ import gueulesCasseesLogo from '../assets/partners/gueules-cassees-logo.png'
 import medicalpsLogo from '../assets/partners/medicalps-logo.png'
 
 const partners = [
-  { name: 'CNRS', logo: cnrsLogo },
-  { name: 'Fondation Recherche Medicale', logo: fondationRechercheLogo },
-  { name: 'Grenoble INP', logo: grenobleInpLogo },
-  { name: 'Grenoble INP Entreprise', logo: grenobleInpEntrepriseLogo },
-  { name: 'Gueules cassées', logo: gueulesCasseesLogo },
-  { name: 'Medicalps', logo: medicalpsLogo }
+  { name: 'CNRS', logo: cnrsLogo, url: 'https://www.cnrsinnovation.com/' },
+  {
+    name: 'Fondation Recherche Medicale',
+    logo: fondationRechercheLogo,
+    url: 'https://www.frm.org/fr'
+  },
+  {
+    name: 'Grenoble INP',
+    logo: grenobleInpLogo,
+    url: 'https://www.grenoble-inp.fr/'
+  },
+  {
+    name: 'Grenoble INP Entreprise',
+    logo: grenobleInpEntrepriseLogo,
+    url: 'https://entreprise.grenoble-inp.fr/'
+  },
+  {
+    name: 'Gueules cassées',
+    logo: gueulesCasseesLogo,
+    url: 'https://www.gueules-cassees.asso.fr/'
+  },
+  { name: 'Medicalps', logo: medicalpsLogo, url: 'https://www.medicalps.eu/' }
 ]
 ---
 
@@ -27,11 +43,13 @@ const partners = [
       {
         partners.map((partner) => (
           <div class="flex items-center justify-center p-4">
-            <Image
-              src={partner.logo}
-              alt={`${partner.name} logo`}
-              class="max-h-16 sm:max-h-20 w-auto"
-            />
+            <a href={partner.url} target="_blank" rel="noreferrer">
+              <Image
+                src={partner.logo}
+                alt={`${partner.name} logo`}
+                class="max-h-16 sm:max-h-20 w-auto"
+              />
+            </a>
           </div>
         ))
       }
