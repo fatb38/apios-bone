@@ -7,13 +7,17 @@ interface Props {
 
 const { title } = Astro.props
 const siteName = 'Apios Ɛ==3 - Innovative Bone Repair Technology'
-const canonicalURL = Astro.url.href
 const description =
   'Apios is transforming the future of bone healing with innovative technology. We develops revolutionary 3D bioactive implants for bone self repair.'
 const keywords =
   'bone repair, bioactive scaffold, 3D printing, regenerative medicine, tissue engineering, bone fracture healing, orthopedic, dental'
 const image = '/bone-radio.png'
-const siteUrl = 'https://dev.apios-bone.com'
+
+const env = import.meta.env.MODE
+const isStaging = env === 'staging'
+const canonicalURL = isStaging
+  ? 'https://dev.apios-bone.com'
+  : 'https://apios-bone.com'
 ---
 
 <!doctype html>
@@ -34,7 +38,7 @@ const siteUrl = 'https://dev.apios-bone.com'
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, siteUrl)} />
+    <meta property="og:image" content={new URL(image, canonicalURL)} />
     <meta property="og:site_name" content={siteName} />
 
     <!-- Twitter -->
@@ -42,7 +46,7 @@ const siteUrl = 'https://dev.apios-bone.com'
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, siteUrl)} />
+    <meta property="twitter:image" content={new URL(image, canonicalURL)} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -54,7 +58,7 @@ const siteUrl = 'https://dev.apios-bone.com'
 
     <!--robots-->
     {
-      import.meta.env.MODE === 'staging' ? (
+      isStaging ? (
         <>
           <meta name="robots" content="noindex, nofollow" />
           <meta name="googlebot" content="noindex, nofollow" />
