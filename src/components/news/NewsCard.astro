@@ -1,17 +1,20 @@
 ---
 import { Image } from 'astro:assets'
 interface Props {
-  title: string;
-  date: Date;
-  image: string;
-  content: string;
-  link: string;
+  title: string
+  date: Date
+  image: string
+  content: string
+  link: string
 }
 
-const { title, date, image, content, link } = Astro.props;
+const { title, date, image, content, link } = Astro.props
 const { pathname } = Astro.url
 ---
-<article class="bg-white sm:rounded-2xl rounded-xl overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all flex flex-col">
+
+<article
+  class="bg-white sm:rounded-2xl rounded-xl overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all flex flex-col"
+>
   <div class="aspect-video overflow-hidden">
     <Image
       src={image}
@@ -25,11 +28,13 @@ const { pathname } = Astro.url
   </div>
   <div class="p-6 flex flex-col flex-grow">
     <time datetime={date.toISOString()} class="text-sm text-gray-500">
-      {date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })}
+      {
+        date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })
+      }
     </time>
     <h3 class="font-roboto font-semibold text-xl mt-2 mb-3">{title}</h3>
     <p class="text-gray-600 flex-grow">{content}</p>
@@ -43,8 +48,19 @@ const { pathname } = Astro.url
       <span class="sr-only">Read full article about</span>
       Read more
       <span class="sr-only">about {title}</span>
-      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      <svg
+        class="w-4 h-4 ml-1"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+        ></path>
       </svg>
     </a>
   </div>
