@@ -9,11 +9,11 @@ const { title } = Astro.props
 const siteName = 'Apios Ɛ==3 - Innovative Bone Repair Technology'
 const canonicalURL = Astro.url.href
 const description =
-  'APIOS is transforming the future of bone healing with innovative solutions and technology. We develops revolutionary 3D bioactive implants for bone repair, combining advanced materials with smart healing systems for better patient outcomes.'
+  'Apios is transforming the future of bone healing with innovative technology. We develops revolutionary 3D bioactive implants for bone self repair.'
 const keywords =
-  'bone repair, bioactive implants, orthopedic technology, medical innovation, 3D printing, tissue engineering, biomaterials, regenerative medicine'
+  'bone repair, bioactive scaffold, 3D printing, regenerative medicine, tissue engineering, bone fracture healing, orthopedic, dental'
 const image = '/bone-radio.png'
-const siteUrl = 'https://apios-bone.com'
+const siteUrl = 'https://dev.apios-bone.com'
 ---
 
 <!doctype html>
@@ -52,11 +52,20 @@ const siteUrl = 'https://apios-bone.com'
     <meta name="apple-mobile-web-app-title" content="APIOS" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!--TODO add an environnement variable to hide the site on dev.apios-bone.fr-->
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="googlebot" content="noindex, nofollow" />
-    <!--<meta name="googlebot" content="index, follow" />-->
-    <!--<meta name="robots" content="index, follow" />-->
+    <!--robots-->
+    {
+      import.meta.env.MODE === 'staging' ? (
+        <>
+          <meta name="robots" content="noindex, nofollow" />
+          <meta name="googlebot" content="noindex, nofollow" />
+        </>
+      ) : (
+        <>
+          <meta name="googlebot" content="index, follow" />
+          <meta name="robots" content="index, follow" />
+        </>
+      )
+    }
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

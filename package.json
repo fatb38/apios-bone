@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build:staging": "astro build --mode staging",
+    "build:production": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier . --write"
