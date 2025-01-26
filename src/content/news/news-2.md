@@ -1,5 +1,5 @@
 ---
-title: "TECH and Fest 2025"
+title: "Tech and Fest 2025"
 date: 2024-12-24
 image: "/news/images/tech-fest.jpeg"
 link: "https://www.tech-fest.fr/fr"

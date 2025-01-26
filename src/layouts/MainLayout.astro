@@ -7,6 +7,7 @@ interface Props {
 
 const { title } = Astro.props
 const siteName = 'Apios Ɛ==3 - Innovative Bone Repair Technology'
+const headTitle = title ?? siteName
 const description =
   'Apios is transforming the future of bone healing with innovative technology. We develops revolutionary 3D bioactive implants for bone self repair.'
 const keywords =
@@ -27,7 +28,7 @@ const canonicalURL = isStaging
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>{title} | {siteName}</title>
+    <title>{headTitle}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="APIOS" />

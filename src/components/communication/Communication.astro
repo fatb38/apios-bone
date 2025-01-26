@@ -3,8 +3,9 @@ import PublicationItem from './PublicationItem.astro'
 import PatentItem from './PatentItem.astro'
 import MediaItem from './MediaItem.astro'
 import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
+import LinkButton from '../UI/LinkButton.astro'
 
-const publications = [
+export const publications = [
   {
     title:
       '3D-Printed Osteoinductive Polymeric Scaffolds with Optimized Architecture to Repair a Sheep Metatarsal Critical-Size Bone Defect.',
@@ -23,6 +24,26 @@ const publications = [
   {
     title:
       'Surface delivery of tunable doses of BMP-2 from an adaptable polymeric scaffold induces volumetric bone regeneration.',
+    doi: '10.1016/j.biomaterials.2016.06.001'
+  },
+  {
+    title:
+      'publication 5',
+    doi: '10.1016/j.biomaterials.2016.06.001'
+  },
+  {
+    title:
+      'publication 6',
+    doi: '10.1016/j.biomaterials.2016.06.001'
+  },
+  {
+    title:
+      'publication 7',
+    doi: '10.1016/j.biomaterials.2016.06.001'
+  },
+  {
+    title:
+      'publication 8',
     doi: '10.1016/j.biomaterials.2016.06.001'
   }
 ]
@@ -70,7 +91,7 @@ const medias = [
       subtitle="Explore our scientific publications, patents, and media coverage"
     />
 
-    <div class="grid lg:grid-cols-3 gap-12">
+    <div class="grid lg:grid-cols-3 gap-12 mb-12">
       <!-- Publications -->
       <div class="relative">
         <div class="sticky top-24">
@@ -78,9 +99,9 @@ const medias = [
           <div class="h-px bg-gray-300 mb-6"></div>
           <ul class="space-y-8">
             {
-              publications.map((publication) => (
-                <PublicationItem {...publication} />
-              ))
+              publications
+                .slice(0, 4)
+                .map((publication) => <PublicationItem {...publication} />)
             }
           </ul>
         </div>
@@ -108,5 +129,7 @@ const medias = [
         </div>
       </div>
     </div>
+
+    <LinkButton href="/publications" text="Show more publications" />
   </div>
 </section>

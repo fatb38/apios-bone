@@ -2,6 +2,7 @@
 import SectionTitleLayout from '../../layouts/SectionTitleLayout.astro'
 import NewsCard from './NewsCard.astro'
 import { getCollection } from 'astro:content'
+import LinkButton from '../UI/LinkButton.astro'
 
 const allNews = await getCollection('news')
 const sortedNews = allNews.sort(
@@ -34,14 +35,7 @@ const hasMoreNews = sortedNews.length > 3
 
     {
       hasMoreNews && (
-        <div class="text-center">
-          <a
-            href="/news"
-            class="inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-colors"
-          >
-            Show More News
-          </a>
-        </div>
+        <LinkButton text="Show more news" href="/news" />
       )
     }
   </div>
