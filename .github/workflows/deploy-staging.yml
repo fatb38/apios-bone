@@ -1,0 +1,35 @@
+name: 'deploy-staging'
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build:staging
+
+      - name: Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ftp.cluster027.hosting.ovh.net
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+          local-dir: dist/
+          server-dir: dev/
+          exclude: |
+            robots.txt
+            sitemap-0.xml
+            sitemap-index.xml
