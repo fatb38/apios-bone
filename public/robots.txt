@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apios-bone.com/sitemap-index.xml
