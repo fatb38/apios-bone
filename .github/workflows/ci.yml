@@ -1,0 +1,49 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: ["main", "dev"]
+  pull_request:
+    branches: ["main", "dev"]
+
+env:
+  TARGET_DIR: ${{ github.ref_name == 'dev' && 'dev/' || 'www/' }}
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Environnement info
+        run: |
+          echo username ${{ secrets.username }}
+          echo password ${{ secrets.password }}
+          echo Pushing to ${{ github.ref_name }} environment
+          echo Server target directory : ${{ env.TARGET_DIR }}
+
+      - name: Build staging
+        if: ${{ github.ref_name == 'dev' }}
+        run: npm run build:staging
+
+      - name: Build production
+        if: ${{ github.ref_name == 'main' }}
+        run: npm run build:production
+
+      - name: Deploy
+        if: github.event_name == 'push' && (github.ref_name == 'dev' || github.ref_name == 'master')
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ftp.cluster027.hosting.ovh.net
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+          local-dir: dist/
+          server-dir: ${{ env.TARGET_DIR }}
