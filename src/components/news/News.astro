@@ -33,10 +33,6 @@ const hasMoreNews = sortedNews.length > 3
       }
     </div>
 
-    {
-      hasMoreNews && (
-        <LinkButton text="Show more news" href="/news" />
-      )
-    }
+    {hasMoreNews && <LinkButton text="Show more news" href="/news" />}
   </div>
 </section>
