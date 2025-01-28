@@ -1,0 +1,16 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: ["main", "dev"]
+
+jobs:
+  staging:
+    if: github.ref_name == 'dev'
+    uses: ./.github/workflows/deploy-staging.yml
+    secrets: inherit
+
+  production:
+    if: github.ref_name == 'main'
+    uses: ./.github/workflows/deploy-production.yml
+    secrets: inherit
