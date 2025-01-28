@@ -1,0 +1,43 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import PublicationItem from '../components/communication/PublicationItem.astro'
+import MediaItem from '../components/communication/MediaItem.astro'
+import {
+  medias,
+  publications
+} from '../content/communication/communication-data'
+---
+
+<MainLayout title="Apios Ɛ==3 - Publications">
+  <div class="pt-24 pb-16">
+    <div
+      class="max-w-4xl mx-auto overflow-hidden grid lg:grid-cols-2 gap-12 mb-12 items-start"
+    >
+      <div class="relative">
+        <div class="sticky top-24">
+          <h2 class="font-roboto font-bold text-2xl mb-4">All Publications</h2>
+          <div class="h-px bg-gray-300 mb-6"></div>
+          <ul class="space-y-8">
+            {
+              publications.map((publication) => (
+                <PublicationItem {...publication} />
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="sticky top-24">
+          <h2 class="font-roboto font-bold text-2xl mb-4">
+            All Media Coverage
+          </h2>
+          <div class="h-px bg-gray-300 mb-6"></div>
+          <ul class="space-y-6">
+            {medias.map((media) => <MediaItem {...media} />)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
