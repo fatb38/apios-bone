@@ -2,16 +2,13 @@
 import MainLayout from '../layouts/MainLayout.astro'
 import PublicationItem from '../components/communication/PublicationItem.astro'
 import MediaItem from '../components/communication/MediaItem.astro'
-import {
-  medias,
-  publications
-} from '../content/communication/communication-data'
+import { medias, publications } from '../data/communication-data'
 ---
 
 <MainLayout title="Apios - Publications">
   <div class="pt-24 pb-16">
     <div
-      class="max-w-4xl mx-auto overflow-hidden grid lg:grid-cols-2 gap-12 mb-12 items-start"
+      class="max-w-4xl px-4 mx-auto overflow-hidden grid lg:grid-cols-2 gap-12 mb-12 items-start"
     >
       <div class="relative">
         <div class="sticky top-24">
