@@ -1,54 +1,18 @@
-# Astro Starter Kit: Basics
+# SITE WEB APIOS BONE
+### Bienvenue sur le repo git du siteweb [apios-bone.com](https://apios-bone.com)
 
-```sh
-npm create astro@latest -- --template basics
+## Ajouter une news
+Les news se trouvent dans le répertoire [src/content/news](src/content/news) et sont au format `markdown`.
+
+Pour ajouter une news rien de plus simple ! Il suffit de copier/coller un des fichiers, le renommer et changer son contenu. Les news sont triées par date de la plus récente à la plus ancienne.  
+
+Il faut aussi ajouter l'image associée dans le répertoire [public/news/images](public/news/images). Le mieux est de mettre une image qui ne soit pas trop volumineuse (pas plus de 200ko) et idéalement au format 16:9 (sinon elle sera en partie rognée).  
+
+Une fois la news et l'image ajoutée il faut `commit` les changements puis `push` le code sur github, le site sera automatiquement déployé. Pour cela, il faut ouvrir le terminal et taper les commandes suivantes :
+```bash
+git add .
+git commit -m "adding fresh news"
+git push
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Et voilà, rendez-vous sur [apios-bone.com](https://apios-bone.com) pour voir la mise à jour !
