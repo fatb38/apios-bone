@@ -78,7 +78,7 @@ export const patents = [
 export const medias = [
   {
     type: "Press release",
-    linkTitle: "Grenoble-INP",
+    linkTitle: "Grenoble INP",
     linkUrl:
       "https://www.grenoble-inp.fr/fr/recherche-valorisation/vers-une-revolution-dans-la-regeneration-osseuse",
   },
