@@ -96,6 +96,12 @@ export const medias = [
   },
   {
     type: "Press release",
+    linkTitle: "Fondation des Gueules Cassés",
+    linkUrl:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7295124454605504514/",
+  },
+  {
+    type: "Press release",
     linkTitle: "Le Monde",
     linkUrl:
       "https://www.lemonde.fr/sante/article/2024/09/06/quand-une-ia-imite-la-nature-pour-mieux-reparer-les-os_6305261_1651302.html",
