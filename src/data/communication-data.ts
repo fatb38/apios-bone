@@ -78,9 +78,9 @@ export const patents = [
 export const medias = [
   {
     type: "Press release",
-    linkTitle: "Le Monde",
+    linkTitle: "Grenoble INP",
     linkUrl:
-      "https://www.lemonde.fr/sante/article/2024/09/06/quand-une-ia-imite-la-nature-pour-mieux-reparer-les-os_6305261_1651302.html",
+      "https://www.grenoble-inp.fr/fr/recherche-valorisation/vers-une-revolution-dans-la-regeneration-osseuses://www.lemonde.fr/sante/article/2024/09/06/quand-une-ia-imite-la-nature-pour-mieux-reparer-les-os_6305261_1651302.html",
   },
   {
     type: "Press release",
@@ -93,6 +93,12 @@ export const medias = [
     linkTitle: "La chronique Santé de Thierry Lhermitte",
     linkUrl:
       "https://www.radiofrance.fr/franceinter/podcasts/la-chronique-sante-de-thierry-lhermitte/la-chronique-sante-de-thierry-lhermitte-du-lundi-18-novembre-2024-8484350",
+  },
+  {
+    type: "Press release",
+    linkTitle: "Le Monde",
+    linkUrl:
+      "https://www.lemonde.fr/sante/article/2024/09/06/quand-une-ia-imite-la-nature-pour-mieux-reparer-les-os_6305261_1651302.html",
   },
   {
     type: "Press release",
