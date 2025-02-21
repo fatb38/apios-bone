@@ -80,7 +80,7 @@ export const medias = [
     type: "Press release",
     linkTitle: "Grenoble INP",
     linkUrl:
-      "https://www.grenoble-inp.fr/fr/recherche-valorisation/vers-une-revolution-dans-la-regeneration-osseuses://www.lemonde.fr/sante/article/2024/09/06/quand-une-ia-imite-la-nature-pour-mieux-reparer-les-os_6305261_1651302.html",
+      "https://www.grenoble-inp.fr/fr/recherche-valorisation/vers-une-revolution-dans-la-regeneration-osseuse",
   },
   {
     type: "Press release",
