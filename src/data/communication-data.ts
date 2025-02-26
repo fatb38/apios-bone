@@ -96,6 +96,12 @@ export const medias = [
   },
   {
     type: "Press release",
+    linkTitle: "Le Dauphiné Libéré",
+    linkUrl:
+      "https://c.ledauphine.com/economie/2025/02/25/regenerer-les-os-catherine-picart-developpe-un-implant-prometteur",
+  },
+  {
+    type: "Press release",
     linkTitle: "Fondation des Gueules Cassés",
     linkUrl:
       "https://www.linkedin.com/feed/update/urn:li:activity:7295124454605504514/",
