@@ -102,7 +102,7 @@ export const medias = [
   },
   {
     type: "Press release",
-    linkTitle: "Fondation des Gueules Cassés",
+    linkTitle: "Fondation des Gueules Cassées",
     linkUrl:
       "https://www.linkedin.com/feed/update/urn:li:activity:7295124454605504514/",
   },
