@@ -1,6 +1,6 @@
 ---
 title: "A visit from Thierry Lhermitte "
-date: 2024-10-08
+date: 2024-10-11
 image: "/news/images/lhermitte.jpg"
 link: "https://www.frm.org/fr/actualites/reparer-les-os-en-utilisant-des-biomateriaux"
 ---

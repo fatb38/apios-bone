@@ -1,6 +1,6 @@
 ---
 title: "CNRS Innovation RISE program"
-date: 2024-11-29
+date: 2024-10-10
 image: "/news/images/cnrs-logo.jpeg"
 link: "https://www.cnrsinnovation.com/actualite/le-cnrs-accueille-la-12e-promotion-du-programme-rise/"
 ---
