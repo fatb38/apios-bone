@@ -1,20 +1,19 @@
 ---
 import { Image } from 'astro:assets'
 import SectionTitleLayout from '../layouts/SectionTitleLayout.astro'
-import cnrsLogo from '../assets/partners/cnrs-logo.png'
+import cnrsRiseLogo from '../assets/partners/cnrs-rise-logo.png'
 import fondationRechercheLogo from '../assets/partners/fondation-recherche-medicale-logo.jpg'
 import grenobleInpLogo from '../assets/partners/grenoble-inp-logo.png'
 import grenobleInpEntrepriseLogo from '../assets/partners/grenoble-inp-entreprise-logo.png'
 import gueulesCasseesLogo from '../assets/partners/gueules-cassees-logo.png'
 import medicalpsLogo from '../assets/partners/medicalps-logo.png'
+import linksiumLogo from '../assets/partners/linksium-logo.jpeg'
+import cnrsLogo from '../assets/partners/cnrs-logo.jpeg'
 
 const partners = [
-  { name: 'CNRS', logo: cnrsLogo, url: 'https://www.cnrsinnovation.com/' },
-  {
-    name: 'Fondation Recherche Medicale',
-    logo: fondationRechercheLogo,
-    url: 'https://www.frm.org/fr'
-  },
+  { name: 'Linksium', logo: linksiumLogo, url: 'https://www.linksium.fr/' },
+  { name: 'CNRS Rise', logo: cnrsRiseLogo, url: 'https://www.cnrsinnovation.com/' },
+  { name: 'CNRS', logo: cnrsLogo, url: 'https://cnrs.fr' },
   {
     name: 'Grenoble INP',
     logo: grenobleInpLogo,
@@ -24,6 +23,11 @@ const partners = [
     name: 'Grenoble INP Entreprise',
     logo: grenobleInpEntrepriseLogo,
     url: 'https://entreprise.grenoble-inp.fr/'
+  },
+  {
+    name: 'Fondation Recherche Medicale',
+    logo: fondationRechercheLogo,
+    url: 'https://www.frm.org/fr'
   },
   {
     name: 'Gueules cassées',
