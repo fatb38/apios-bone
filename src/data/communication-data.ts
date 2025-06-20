@@ -121,12 +121,14 @@ export const medias = [
   {
     type: "Press release",
     linkTitle: "Femme Actuelle",
-    linkUrl: "https://www.femmeactuelle.fr/sante/sante-pratique/biomimetisme-6-innovations-medicales-inspirees-de-la-nature-2178570",
+    linkUrl:
+      "https://www.femmeactuelle.fr/sante/sante-pratique/biomimetisme-6-innovations-medicales-inspirees-de-la-nature-2178570",
   },
   {
     type: "Press release",
     linkTitle: "Polytechnique Insights",
-    linkUrl: "https://www.polytechnique-insights.com/tribunes/science/quand-la-medecine-regeneratrice-imite-la-nature/",
+    linkUrl:
+      "https://www.polytechnique-insights.com/tribunes/science/quand-la-medecine-regeneratrice-imite-la-nature/",
   },
   {
     type: "Video",
