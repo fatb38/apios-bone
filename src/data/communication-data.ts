@@ -78,6 +78,12 @@ export const patents = [
 export const medias = [
   {
     type: "Press release",
+    linkTitle: "CIC magazine Presence",
+    linkUrl:
+      "https://www.presences-grenoble.fr/actualites-start-grenoble/apios-revolutionne-la-regeneration-osseuse.htm",
+  },
+  {
+    type: "Press release",
     linkTitle: "Grenoble INP",
     linkUrl:
       "https://www.grenoble-inp.fr/fr/recherche-valorisation/vers-une-revolution-dans-la-regeneration-osseuse",
