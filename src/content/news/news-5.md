@@ -1,6 +1,6 @@
 ---
 title: "Biolabs Investor Day 2025"
-date: 2025-02-28
+date: 2025-03-11
 image: "/news/images/biolabs.jpg"
 link: "https://www.biolabsinvestorday.com/europe-25"
 ---
