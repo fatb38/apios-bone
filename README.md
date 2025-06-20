@@ -15,6 +15,7 @@ Une fois la news et l'image ajoutée il faut `commit` les changements puis `push
 ```bash
 git add .
 git commit -m "adding fresh news"
+git pull (si erreur)
 git push
 ```
 
