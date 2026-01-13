@@ -5,4 +5,4 @@ image: "/news/images/tech-fest.jpeg"
 link: "https://www.tech-fest.fr/fr"
 ---
 
-We are happy to announce that APIOS will be present at TECH and FEST 2026, Wednesday 5th of February at Alpexpo Grenoble. Come chat with us !
+We are happy to announce that APIOS will be present at TECH and FEST 2026, Wednesday 4th of February at Alpexpo Grenoble. Come chat with us !
