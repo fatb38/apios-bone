@@ -1,5 +1,5 @@
 ---
-title: "25th of Medicalps"
+title: "25th anniversary of Medicalps"
 date: 2026-07-08
 image: "/news/images/medicalps.jpg"
 link: "https://www.medicalps.eu/evenements/medicalps-fete-ses-25-ans//"
